@@ -4,7 +4,18 @@ export default createGlobalStyle`
 
 @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Raleway:ital,wght@0,300;1,300&display=swap');
 
+#root {
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: spaced-evenly;
+    align-items: center;
+}
+
 :root {
+    --header-height: 168.13px;
+
     --bg-light-gray: #C4C4C4;
     --bg-dark-gray: #202020;
     --bg-dark-blue: #172735;
@@ -22,6 +33,16 @@ export default createGlobalStyle`
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+}
+
+body {
+    margin-top: calc(var(--header-height) + 25px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--bg-dark-gray);
 }
 
 a {
