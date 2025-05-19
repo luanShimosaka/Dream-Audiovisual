@@ -14,15 +14,15 @@ export default function Start() {
 
                 <div className="bottom-start">
                     <div className='line-start'></div>
-                    <img src="../../../public/assets/clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.svg" alt="" className="logo-start" />
+                    <img src="../../../assets/clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.svg" alt="" className="logo-start" />
                     <div className='line-start'></div>
-                    <img src="../../../public/assets/clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.svg" alt="" className="logo-start" />
+                    <img src="../../../assets/clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.svg" alt="" className="logo-start" />
                     <div className='line-start'></div>
-                    <img src="../../../public/assets/clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.svg" alt="" className="logo-start" />
+                    <img src="../../../assets/clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.svg" alt="" className="logo-start" />
                     <div className='line-start'></div>
-                    <img src="../../../public/assets/clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.svg" alt="" className="logo-start" />
+                    <img src="../../../assets/clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.svg" alt="" className="logo-start" />
                     <div className='line-start'></div>
-                    <img src="../../../public/assets/clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.svg" alt="" className="logo-start" />
+                    <img src="../../../assets/clipart-logo-idea-cute-eagle-leaf-logo-thumbnail.svg" alt="" className="logo-start" />
                     <div className='line-start'></div>
                 </div>
             </div>

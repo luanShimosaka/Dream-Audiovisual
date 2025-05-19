@@ -1,4 +1,4 @@
-import { AboutmeComponent, HeaderComponent, StartComponent } from "../../components/components";
+import { AboutmeComponent, HeaderComponent, PortfolioComponent, StartComponent } from "../../components/components";
 import './style.css'
 
 export default function Landpage() {
@@ -8,6 +8,7 @@ export default function Landpage() {
             <div className="container-landpage">
                 <StartComponent />
                 <AboutmeComponent />
+                <PortfolioComponent />
             </div>
         </>
     )

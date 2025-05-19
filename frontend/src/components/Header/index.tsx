@@ -6,7 +6,7 @@ export default function Header() {
             <div className="container-header">
                 <div className="left-header">
                     <div id="title-and-logo-header">
-                        <img src="../../../public/assets/logo.svg" alt="" id="logo-header" />
+                        <img src="../../../assets/logo.svg" alt="" id="logo-header" />
                         <h1 id="title-header">Luan Shimosaka</h1>
                     </div>
                 </div>
