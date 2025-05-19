@@ -45,10 +45,6 @@
 
 #title-header {
     font-size: 37.5px;
-    font-family: "Italiana", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    
     color: var(--white);
 }
 
@@ -83,7 +79,7 @@
     justify-content: space-evenly;
 }
 
-#budget-button-header {
+.budget-button-header {
     padding: 0.65%;
     padding-inline: 2.2%;
 
@@ -95,6 +91,16 @@
 }
 
 #links-header a {
+    padding: 0.65%;
+    padding-inline: 2.2%;
+
+    border-radius: 7.2px;
+
     font-size: 24px;
     color: var(--white);
+}
+
+#links-header a:hover {
+    background-color: rgba(20, 20, 20, 0.05);
+    transition: 0.3s;
 }

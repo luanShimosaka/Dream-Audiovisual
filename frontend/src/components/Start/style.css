@@ -33,10 +33,6 @@
 
 #title-start {
     font-size: 120px;
-    font-family: "Italiana", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
     color: var(--black);
 }
 
@@ -44,7 +40,7 @@
     font-size: 32px;
 }
 
-#budget-button-start {
+.budget-button-start {
     border-radius: 12px;
 
     font-size: 40px;

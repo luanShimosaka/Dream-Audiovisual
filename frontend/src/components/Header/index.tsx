@@ -16,7 +16,7 @@ export default function Header() {
                         <a href="" id="main-header">Início</a>
                         <a href="" id="aboutme-header">Sobre Mim</a>
                         <a href="" id="portfolio-header">Portfólio</a>
-                        <button id="budget-button-header">Peça um Orçamento</button>
+                        <button className="budget-button-header budget-button">Peça um Orçamento</button>
                     </div>
                 </div>
             </div>

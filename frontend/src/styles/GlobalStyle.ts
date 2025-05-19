@@ -5,11 +5,11 @@ export default createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Raleway:ital,wght@0,300;1,300&display=swap');
 
 #root {
-    width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
-    justify-content: spaced-evenly;
     align-items: center;
 }
 
@@ -62,6 +62,12 @@ button {
     font: inherit;
     cursor: pointer;
     appearance: none;
+}
+
+h1 {
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 `

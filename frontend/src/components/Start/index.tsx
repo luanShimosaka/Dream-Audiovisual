@@ -1,7 +1,5 @@
 import './style.css'
 
-/* clipart-logo-idea-cute-eagle-leaf-logo-thumbnail */
-
 export default function Start() {
     return (
         <>
@@ -11,7 +9,7 @@ export default function Start() {
                         <h1 id="title-start">Luan Shimosaka</h1>
                         <h3 id="subtitle-start">Uma nova visão sobre a sua realidade</h3>
                     </div>
-                    <button id="budget-button-start">Peça um Orçamento</button>
+                    <button className="budget-button budget-button-start">Peça um Orçamento</button>
                 </div>
 
                 <div className="bottom-start">
