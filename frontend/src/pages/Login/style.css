@@ -1,0 +1,42 @@
+.container-login {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-image: url("../../../assets/main-background.svg");
+    background-size: auto;
+    background-position-x: center;
+    background-position-y: bottom;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Parte da esquerda */
+
+#main-logo-login {
+    width: 142px;
+    height: 142px;
+
+    margin-left: 3%;
+}
+
+/* Parte da direita */
+
+.form-login {
+    width: 100%;
+    max-width: 629px;
+    height: 100%;
+
+    margin-right: 3%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: rgba(20, 20, 20, 0.7);
+}

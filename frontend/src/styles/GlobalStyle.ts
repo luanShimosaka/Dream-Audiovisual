@@ -37,8 +37,6 @@ export default createGlobalStyle`
 }
 
 body {
-    margin-top: calc(var(--header-height) + 25px);
-
     display: flex;
     flex-direction: column;
     align-items: center;
