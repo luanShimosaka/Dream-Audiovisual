@@ -9,7 +9,7 @@ Sou fotógrafo freelancer e atuo com audiovisual como fonte de renda extra. Dese
 ## 💻 Ferramentas e Instalação
 
 - **TypeScript** versão `5.8.3`
-- **NPM** versão `11.2.0`
+- **NPM** versão `11.4.2`
 - **MySql** versão `9.3.0`
 - **CSS3**
 - **HTML5**
