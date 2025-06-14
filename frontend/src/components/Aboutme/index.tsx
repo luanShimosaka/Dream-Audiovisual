@@ -7,12 +7,12 @@ export default function Aboutme() {
                 <div className="left-aboutme">
                     <h1 id="title-aboutme">Sobre Mim</h1>
                     <h2 id="subtitle-aboutme">
-                        Muito prazer, me chamo
+                        Muito prazer, somos a
                         <br />
-                        Luan Shimosaka
+                        Dream Audiovisual
                     </h2>
                     <h4 id="description-aboutme">
-                        Fotógrafo e estudante de Ciência da Computação na UFLA, busco registrar a felicidade e beleza que reside em cada momento. Movido por
+                        Et nihil ipsa id necessitatibus quia et itaque autem et omnis consequatur quo voluptas ullam vel quae galisum!
                     </h4>
                 </div>
 
