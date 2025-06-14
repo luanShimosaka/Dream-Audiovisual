@@ -55,8 +55,56 @@ nest new nome-do-projeto --strict
 
 Acesse a [documentação oficial do NestJS](https://docs.nestjs.com/) para mais detalhes.
 
----
-
 ## 🧱 Ambiente de Desenvolvimento
 
 Durante o desenvolvimento, utilizaremos o [**Visual Studio Code**](https://code.visualstudio.com/) como editor de código principal, além do [**NPM**](https://www.npmjs.com/) como gerenciador de pacotes para instalação das dependências necessárias.
+
+## 🧑‍💻 Regras de código adotadas
+
+- Para o padrão de notação adotaremos:
+    - `camelCase` para métodos e funções
+    - `snake_case` para variáveis e atributos
+    - `PascalCase` para classes
+    - `UPPER_SNAKE_CASE` para constantes
+
+    Exemplo:
+
+    ```javascript
+    function criarEnsaio() {...}
+    let nome_cliente = 'João'
+    class EnsaioFotografico {...}
+    const MAX_FOTOS = 100
+    ```
+
+- Documentação e comentários no código para auxiliar na reutilização e no entendimento do código por outros programadores.
+
+- Princípio da Responsabilidade Única (SRP - SOLID): Cada classe ou função será projetada para ter **apenas uma única** responsabilidade.
+
+- Modularização do código: O projeto será dividido em **módulos organizados por domínio**. Essa estrutura modular melhora a escalabilidade do sistema e facilita a organização do código.
+
+- Evitar replicação de código.
+
+- Nomes significativos (Clean Code): Dar nomes para funções, variáveis e classes de acordo com seu propósito.
+
+    Exemplo:
+
+    ```
+    ✅ criarAlbumParaCliente()
+    ❌ processarDados1()
+    ```
+
+## 🧑‍💻 Regras e padrões de Git adotadas
+
+- Commits deverão ser realizados em português do Brasil.
+
+- Adoção da "Single Responsability" para cada commit.
+
+- A branch `main` deve conter o código mais estável.
+
+- A branch `develop` deve conter todo o código mais novo já testado e revisado pelo PO.
+
+- Para cada nova alteração e modificação no código, deverá ser criada uma nova branch, chamada de `branch de trabalho`.
+
+- Após uma modificação for concluida em uma `branch de trabalho`, o PO deve deve criar um Pull Request para a branch `develop`.
+
+- Ao final de cada sprint, a branch `develop` deve ser mergeada à branch `main` após a garantia de estabilidade do código.
