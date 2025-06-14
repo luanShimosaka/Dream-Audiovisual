@@ -61,7 +61,7 @@ Durante o desenvolvimento, utilizaremos o [**Visual Studio Code**](https://code.
 
 ## 🧑‍💻 Regras de código adotadas
 
-- Para o padrão de notação adotaremos:
+- **Padrão de notação adotado:**
     - `camelCase` para métodos e funções
     - `snake_case` para variáveis e atributos
     - `PascalCase` para classes
@@ -76,15 +76,15 @@ Durante o desenvolvimento, utilizaremos o [**Visual Studio Code**](https://code.
     const MAX_FOTOS = 100
     ```
 
-- Documentação e comentários no código para auxiliar na reutilização e no entendimento do código por outros programadores.
+- **Documentação e comentários no código:** Comentários devem ser usados para explicar trechos complexos ou decisões de design. O código deve ser escrito de forma que seja o mais autoexplicativo possível, facilitando a reutilização e entendimento por outros programadores.
 
-- Princípio da Responsabilidade Única (SRP - SOLID): Cada classe ou função será projetada para ter **apenas uma única** responsabilidade.
+- **Princípio da Responsabilidade Única (SRP - SOLID):** Cada classe ou função deve ter **apenas uma única responsabilidade**, evitando acúmulo de lógica não relacionada no mesmo local.
 
-- Modularização do código: O projeto será dividido em **módulos organizados por domínio**. Essa estrutura modular melhora a escalabilidade do sistema e facilita a organização do código.
+- **Modularização do código:** O sistema será dividido em **módulos organizados por domínio**, promovendo escalabilidade, organização e reutilização de componentes.
 
-- Evitar replicação de código.
+- **Evitar duplicação de código (DRY - Don’t Repeat Yourself):** Trechos de código repetidos deverão ser refatorados para funções reutilizáveis, evitando redundância.
 
-- Nomes significativos (Clean Code): Dar nomes para funções, variáveis e classes de acordo com seu propósito.
+- **Nomes significativos (Clean Code):** As funções, variáveis e classes devem ter nomes descritivos, que expressem claramente sua intenção.
 
     Exemplo:
 
@@ -93,18 +93,18 @@ Durante o desenvolvimento, utilizaremos o [**Visual Studio Code**](https://code.
     ❌ processarDados1()
     ```
 
-## 🧑‍💻 Regras e padrões de Git adotadas
+## 🌱 Regras e Padrões de Git adotadas
 
-- Commits deverão ser realizados em português do Brasil.
+- **Commits devem ser realizados em português do Brasil**.
 
-- Adoção da "Single Responsability" para cada commit.
+- **Aplicar o princípio de responsabilidade única em cada commit:** Cada commit deve representar uma única alteração ou funcionalidade, evitando mudanças misturadas no histórico.
 
-- A branch `main` deve conter o código mais estável.
+- **A branch `main` deve conter o código mais estável**, pronto para deploy ou produção.
 
-- A branch `develop` deve conter todo o código mais novo já testado e revisado pelo PO.
+- **A branch `develop` deve conter todo o código mais recente**, já testado e revisado pelo PO.
 
-- Para cada nova alteração e modificação no código, deverá ser criada uma nova branch, chamada de `branch de trabalho`.
+- **Criação de branches de trabalho:** Para cada nova funcionalidade ou correção, deve-se criar uma nova branch. O nome da branch deve refletir claramente o que está sendo implementado ou alterado.
 
-- Após uma modificação for concluida em uma `branch de trabalho`, o PO deve deve criar um Pull Request para a branch `develop`.
+- **Processo de Pull Request:** Após concluir as alterações em uma `branch de trabalho`, o PO deverá abrir um Pull Request direcionado à branch `develop`, garantindo revisão e controle.
 
-- Ao final de cada sprint, a branch `develop` deve ser mergeada à branch `main` após a garantia de estabilidade do código.
+- **Integração com a `main`:** Ao final de cada sprint, a `develop` será mergeada na `main`, desde que a estabilidade do código esteja garantida.
