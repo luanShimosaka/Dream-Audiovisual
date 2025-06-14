@@ -6,7 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     imports: [TypeOrmModule.forRootAsync({
         useFactory: async (configService: ConfigService) => ({
             type: 'mysql',
-            host: configService.get<string>('DB_HOST'),
+            host: configService.get<string>('DB_HOST') ?? 'localhost',
             port: +(configService.get<number>('DB_PORT') ?? 3306),
             username: configService.get<string>('DB_USERNAME'),
             password: configService.get<string>('DB_PASSWORD'),
