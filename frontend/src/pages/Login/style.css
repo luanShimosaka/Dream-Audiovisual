@@ -71,14 +71,14 @@
 .under-title-login h3 {
     text-decoration: underline;
     font-style: italic;
-    color: #EEE;
+    color: var(--of-white);
     font-size: 16px;
     margin-bottom: 3%;
     cursor: pointer;
 }
 
 .under-title-login h4 {
-    color: #EEE;
+    color: var(--of-white);
     font-size: 18px;
     text-align: center;
 }

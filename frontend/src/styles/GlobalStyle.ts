@@ -20,6 +20,7 @@ export default createGlobalStyle`
     --bg-dark-gray: #202020;
     --bg-dark-blue: #172735;
     --white: #FFFFFF;
+    --of-white: #EEEEEE;
     --black: #000000;
     --glacier-50: #F1F8FA;
 }
