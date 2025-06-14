@@ -19,11 +19,11 @@ export default function Register() {
                                 </div>
                                 <div className="email-register input-register">
                                     <h2>Email</h2>
-                                    <input type="text" />
+                                    <input type="email" />
                                 </div>
                                 <div className="senha-register input-register">
                                     <h2>Senha</h2>
-                                    <input type="text" />
+                                    <input type="password" />
                                 </div>
                             </div>
                         </FormComponent>

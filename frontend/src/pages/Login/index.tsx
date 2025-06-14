@@ -19,7 +19,7 @@ export default function Login() {
                                 </div>
                                 <div className="senha-login input-login">
                                     <h2>Senha</h2>
-                                    <input type="text" />
+                                    <input type="password" />
                                 </div>
                             </div>
                         </FormComponent>
