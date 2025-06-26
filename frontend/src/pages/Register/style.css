@@ -1,4 +1,4 @@
-.container-login {
+.container-register {
     width: 100%;
     height: 100vh;
 
@@ -14,7 +14,7 @@
 
 /* Parte da esquerda */
 
-#main-logo-login {
+#main-logo-register {
     width: 142px;
     height: 142px;
 
@@ -23,7 +23,7 @@
 
 /* Parte da direita */
 
-.form-login {
+.form-register {
     width: 100%;
     max-width: 629px;
     height: 100%;
@@ -37,7 +37,7 @@
     background-color: var(--bg-dark-gray);
 }
 
-.under-title-login {
+.under-title-register {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,7 +47,7 @@
     height: 100%;
 }
 
-.inputs-login {
+.inputs-register {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,7 +56,7 @@
     width: 100%;
 }
 
-.input-login {
+.input-register {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -64,31 +64,23 @@
     margin-bottom: 7%;
 }
 
-.input-login h2 {
+.input-register h2 {
     margin-bottom: 5%;
 }
 
-.under-title-login h3 {
-    text-decoration: underline;
-    font-style: italic;
-    color: #EEE;
-    font-size: 16px;
-    margin-bottom: 3%;
-    cursor: pointer;
-}
-
-.under-title-login h4 {
+.under-title-register h4 {
     color: #EEE;
     font-size: 18px;
     text-align: center;
 }
 
-.button-login {
+.button-register {
     width: 100%;
     height: 53px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
+    margin-top: 10%;
 }
