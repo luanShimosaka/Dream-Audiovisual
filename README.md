@@ -55,9 +55,59 @@ nest new nome-do-projeto --strict
 
 Acesse a [documentação oficial do NestJS](https://docs.nestjs.com/) para mais detalhes.
 
-## 🧱 Ambiente de Desenvolvimento
+## Ambiente de Desenvolvimento
 
 Durante o desenvolvimento, utilizaremos o [**Visual Studio Code**](https://code.visualstudio.com/) como editor de código principal, além do [**NPM**](https://www.npmjs.com/) como gerenciador de pacotes para instalação das dependências necessárias.
+
+## 🧑‍💻 Regras de código adotadas
+
+- **Padrão de notação adotado:**
+    - `camelCase` para métodos e funções
+    - `snake_case` para variáveis e atributos
+    - `PascalCase` para classes
+    - `UPPER_SNAKE_CASE` para constantes
+
+    Exemplo:
+
+    ```javascript
+    function criarEnsaio() {...}
+    let nome_cliente = 'João'
+    class EnsaioFotografico {...}
+    const MAX_FOTOS = 100
+    ```
+
+- **Documentação e comentários no código:** Comentários devem ser usados para explicar trechos complexos ou decisões de design. O código deve ser escrito de forma que seja o mais autoexplicativo possível, facilitando a reutilização e entendimento por outros programadores.
+
+- **Princípio da Responsabilidade Única (SRP - SOLID):** Cada classe ou função deve ter **apenas uma única responsabilidade**, evitando acúmulo de lógica não relacionada no mesmo local.
+
+- **Modularização do código:** O sistema será dividido em **módulos organizados por domínio**, promovendo escalabilidade, organização e reutilização de componentes.
+
+- **Evitar duplicação de código (DRY - Don’t Repeat Yourself):** Trechos de código repetidos deverão ser refatorados para funções reutilizáveis, evitando redundância.
+
+- **Nomes significativos (Clean Code):** As funções, variáveis e classes devem ter nomes descritivos, que expressem claramente sua intenção.
+
+    Exemplo:
+
+    ```
+    ✅ criarAlbumParaCliente()
+    ❌ processarDados1()
+    ```
+
+## 🌱 Regras e Padrões de Git adotadas
+
+- **Commits devem ser realizados em português do Brasil**.
+
+- **Aplicar o princípio de responsabilidade única em cada commit:** Cada commit deve representar uma única alteração ou funcionalidade, evitando mudanças misturadas no histórico.
+
+- **A branch `main` deve conter o código mais estável**, pronto para deploy ou produção.
+
+- **A branch `develop` deve conter todo o código mais recente**, já testado e revisado pelo PO.
+
+- **Criação de branches de trabalho:** Para cada nova funcionalidade ou correção, deve-se criar uma nova branch. O nome da branch deve refletir claramente o que está sendo implementado ou alterado.
+
+- **Processo de Pull Request:** Após concluir as alterações em uma `branch de trabalho`, o PO deverá abrir um Pull Request direcionado à branch `develop`, garantindo revisão e controle.
+
+- **Integração com a `main`:** Ao final de cada sprint, a `develop` será mergeada na `main`, desde que a estabilidade do código esteja garantida.
 
 ## 🧑‍💻 Regras de código adotadas
 

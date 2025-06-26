@@ -1,0 +1,8 @@
+export {default as HeaderComponent} from './Header'
+export {default as StartComponent} from './Start'
+export {default as AboutmeComponent} from './Aboutme'
+export {default as PortfolioComponent} from './Portfolio'
+export {default as FlowComponent} from './Flow'
+export {default as MaintitleComponent} from './Maintitle'
+export {default as FormComponent} from './Form'
+export {default as FormButtonComponent} from './FormButton'

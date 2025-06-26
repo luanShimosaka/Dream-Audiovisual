@@ -1,0 +1,108 @@
+.container-aboutme {
+    position: relative;
+
+    width: 100%;
+    height: 721px;
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Parte da esquerda */
+
+.left-aboutme {
+    height: 100%;
+    width: 55%;
+    max-width: 660px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+#title-aboutme {
+    font-size: 60px;
+    color: var(--white);
+}
+
+#subtitle-aboutme {
+    font-size: 48px;
+    color: var(--white);
+}
+
+#description-aboutme {
+    font-size: 24px;
+    color: var(--white);
+}
+
+/* Parte da direita */
+
+.right-aboutme {
+    height: 100%;
+    width: 45%;
+    max-width: 540px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#image1-aboutme {
+    z-index: 1;
+    max-height: 180px;
+    max-width: 480px;
+    height: 100%;
+    width: 100%;
+
+    display: block;
+    position: absolute;
+
+    right: 0px;
+
+    border-radius: 16px;
+
+    background-color: greenyellow;
+}
+
+#image2-aboutme {
+    z-index: 1;
+    max-height: 160px;
+    max-width: 240px;
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+
+    align-items: start;
+    justify-content: right;
+
+    right: 0px;
+    bottom: 130px;
+
+    border-radius: 16px;
+
+    background-color: red;
+}
+
+#image3-aboutme {
+    max-height: 480px;
+    max-width: 480px;
+    height: 100%;
+    width: 100%;
+
+    bottom: 100px;
+
+    display: block;
+    position: absolute;
+
+    border-radius: 16px;
+
+    background-color: blue;
+}

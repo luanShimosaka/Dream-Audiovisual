@@ -1,0 +1,12 @@
+.container-landpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.budget-button:hover {
+    background-color: rgba(20, 20, 20, 0.05);
+    transition: 0.3s;
+}
