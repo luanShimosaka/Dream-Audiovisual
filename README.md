@@ -38,7 +38,7 @@ Você pode acessar a [documentação oficial do Vite](https://vite.dev/guide/) �
 
 ### 🛠️ Back-end
 
-Para o back-end, optamos pela utilização do **NestJS** na versão `11.0.1` com **TypeScript** para a construção da API. O banco de dados escolhido foi o **MySQL**, por ser uma solução relacional robusta e amplamente utilizada.
+Para o back-end, optamos pela utilização do **NestJS** com **TypeScript** para a construção da API. O banco de dados escolhido foi o **MySQL**, por ser uma solução relacional robusta e amplamente utilizada.
 
 Abaixo estão os comandos para instalação do Nest CLI e criação do projeto:
 
@@ -55,7 +55,9 @@ nest new nome-do-projeto --strict
 
 Acesse a [documentação oficial do NestJS](https://docs.nestjs.com/) para mais detalhes.
 
-## 🧱 Ambiente de Desenvolvimento
+---
+
+## Ambiente de Desenvolvimento
 
 Durante o desenvolvimento, utilizaremos o [**Visual Studio Code**](https://code.visualstudio.com/) como editor de código principal, além do [**NPM**](https://www.npmjs.com/) como gerenciador de pacotes para instalação das dependências necessárias.
 
