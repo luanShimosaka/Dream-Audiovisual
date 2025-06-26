@@ -8,7 +8,7 @@
     max-height: 52.1669921875px;
     height: 100%;
 
-    background-color: #EEE;
+    background-color: var(--of-white);
     border-radius: 6px;
 }
 
