@@ -1,7 +1,7 @@
 import { MenuOptionsComponent } from '../../components/components.ts'
 import './style.css'
 
-export default function ClientList() {
+export default function SchedulesList() {
     return (
         <>
             <>
@@ -10,23 +10,23 @@ export default function ClientList() {
                     <div className="right-clientlist">
                         <div className="top-right-clientlist">
                             <div id="top-right-icon-clientlist">
-                                <i className="material-icons">groups</i>
+                                <i className="material-icons">event</i>
                             </div>
-                            <h2>Lista de Clientes</h2>
+                            <h2>Agendamentos</h2>
                         </div>
                         <div className="bottom-right-clientlist">
                             <table id="clients-table">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nome</th>
-                                    <th>E-mail</th>
-                                    <th>Telefone</th>
+                                    <th>Descrição</th>
+                                    <th>Local</th>
+                                    <th>Data Agen.</th>
                                 </tr>
                                 <tr>
                                     <td>1</td>
                                     <td>Exemplo</td>
                                     <td>Exemplo</td>
-                                    <td>(XX) XXXXX-XXXX</td>
+                                    <td>XX/XX/XXXX</td>
                                 </tr>
                             </table>
                         </div>

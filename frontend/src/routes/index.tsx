@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { ClientListPage, LandpagePage, LoginPage, ProfilePage, RegisterPage } from "../pages/pages"
+import { ClientListPage, LandpagePage, LoginPage, ProfilePage, RegisterPage, SchedulesListPage } from "../pages/pages"
 
 const PageRoutes = () => {
     return (
@@ -11,6 +11,7 @@ const PageRoutes = () => {
                     <Route path="/register" element={<RegisterPage />}/>
                     <Route path="/profile" element={<ProfilePage />}/>
                     <Route path="/clientlist" element={<ClientListPage />}/>
+                    <Route path="/schedules" element={<SchedulesListPage />}/>
                 </Route>
             </Routes>
         </BrowserRouter>
