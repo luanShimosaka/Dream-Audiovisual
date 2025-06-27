@@ -1,4 +1,4 @@
-import { MenuOptionsComponent } from '../../components/components.ts'
+import { FormButtonIconsComponent, MenuOptionsComponent } from '../../components/components.ts'
 import './style.css'
 
 export default function SchedulesList() {
@@ -13,6 +13,17 @@ export default function SchedulesList() {
                                 <i className="material-icons">event</i>
                             </div>
                             <h2>Agendamentos</h2>
+                        </div>
+                        <div className="buttons-schedule">
+                            <div className="button-schedule">
+                                <FormButtonIconsComponent text='Adicionar Agendamento' />
+                            </div>
+                            <div className="button-schedule">
+                                <FormButtonIconsComponent text='Filtrar por...' icon='filter_alt' />
+                            </div>
+                            <div className="button-schedule">
+                                <FormButtonIconsComponent text='Ordenar por...'  icon='reorder' />
+                            </div>
                         </div>
                         <div className="bottom-right-clientlist">
                             <table id="clients-table">

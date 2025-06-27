@@ -1,0 +1,38 @@
+.container-form-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: relative;
+
+    width: 100%;
+    max-height: 52.1669921875px;
+    height: 100%;
+
+    padding-inline: 5px;
+
+    background-color: var(--of-white);
+    border-radius: 6px;
+}
+
+.container-form-button h2 {
+    width: 100%;
+    font-size: 25px;
+    color: var(--black);
+}
+
+.container-form-button:hover {
+    background-color: rgba(238, 238, 238, 0.7);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 5%;
+    padding-right: 10%;
+}
