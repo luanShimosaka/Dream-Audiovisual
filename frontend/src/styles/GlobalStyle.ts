@@ -75,4 +75,37 @@ h2 {
     font-style: normal;
 }
 
+table {
+    width: 97%;
+
+    border-collapse: separate;
+    border-spacing: 10px;
+    
+    margin-top: 20px;
+}
+
+th {
+    font-weight: 600;
+    font-size: 32px;
+    color: white;
+
+    padding: 5px;
+    margin: 10px;
+
+    background-color: #444343;
+
+    border-radius: 6px;
+}
+
+td {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    padding: 5px;
+
+    border-radius: 6px;
+
+    background-color: #444343;
+}
+
 `

@@ -74,6 +74,7 @@
 .icon-profile:hover {
     background-color: rgba(44, 44, 44, 0.77);
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .icon-profile h2 {
