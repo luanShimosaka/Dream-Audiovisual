@@ -1,5 +1,5 @@
-import { IsEmail, IsNotEmpty, MinLength } from 'class-validator';
-
+import { IsEmail, IsNotEmpty, MinLength, IsString, IsOptional, IsDate } from 'class-validator';
+import { Type } from 'class-transformer';
 export class CreateUserDto {
   @IsNotEmpty({ message: 'O nome não pode ser vazio.' })
   nome: string;
