@@ -13,8 +13,13 @@ export class UserController {
   }
 
   @Get()
-  findAll() {
-    return this.userService.findAll();
+  findAll(
+    @Query('nome') nome?: string,
+    @Query('email') email?: string,
+    @Query('page') page = '1',
+    @Query('limit') limit = '10',
+  ) {
+    return this.userService.findAll(nome, email, parseInt(page), parseInt(limit));
   }
 
   @Get(':id')

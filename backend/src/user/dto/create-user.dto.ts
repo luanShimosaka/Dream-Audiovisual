@@ -10,4 +10,13 @@ export class CreateUserDto {
   @IsNotEmpty({ message: 'A senha não pode ser vazia.' })
   @MinLength(6, { message: 'A senha deve ter no mínimo 6 caracteres.' })
   senha: string;
+
+  @IsString()
+  @IsOptional()
+  telefone?: string;
+
+  @IsOptional()
+  @IsDate()
+  @Type(() => Date)
+  datanascimento?: Date;
 }
