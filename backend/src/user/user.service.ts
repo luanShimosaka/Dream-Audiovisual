@@ -27,12 +27,12 @@ export class UserService {
     return this.userRepository.save(user);
   }
 
-  // READ (All)
+  // READ (Todos)
   findAll(): Promise<User[]> {
     return this.userRepository.find();
   }
 
-  // READ (One by ID)
+  // READ (Por id)
   async findOne(id: number): Promise<User> {
     const user = await this.userRepository.findOne({ where: { id } });
     if (!user) {
