@@ -8,5 +8,6 @@ import { Agendamento } from './entities/agendamento.entity';
   imports: [TypeOrmModule.forFeature([Agendamento])],
   controllers: [AgendamentoController],
   providers: [AgendamentoService],
+  exports: [AgendamentoService],
 })
 export class AgendamentoModule {}

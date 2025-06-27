@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { AgendamentoModule } from './agendamento/agendamento.module';
+import { AlbumModule } from './album/album.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { AgendamentoModule } from './agendamento/agendamento.module';
     UserModule,
     AuthModule,
     AgendamentoModule,
+    AlbumModule,
   ],
   controllers: [AppController],
   providers: [AppService],
