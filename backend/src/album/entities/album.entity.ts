@@ -1,10 +1,12 @@
 import { Agendamento } from '../../agendamento/entities/agendamento.entity';
+import { Foto } from '../../foto/entities/foto.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
   OneToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
 
 @Entity({ name: 'albuns' }) 
@@ -25,7 +27,12 @@ export class Album {
   categoria: string;
 
   @OneToOne(() => Agendamento)
-  //Aqui crio uma coluna 'agendamentoId' na nossa tabela 'albuns'.
+
   @JoinColumn()
   agendamento: Agendamento;
+
+  @OneToMany(() => Foto, (foto) => foto.album, {
+    cascade: true, //cascade: Se deletarmos um álbum, todas as fotos associadas também serão deletadas.
+  })
+  fotos: Foto[]; //A estrutura do album será um array de Fotos.
 }

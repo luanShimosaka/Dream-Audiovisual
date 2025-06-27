@@ -12,5 +12,6 @@ import { AgendamentoModule } from '../agendamento/agendamento.module';
   ],
   controllers: [AlbumController],
   providers: [AlbumService],
+  exports: [AlbumService],
 })
 export class AlbumModule {}

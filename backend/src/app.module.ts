@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { AgendamentoModule } from './agendamento/agendamento.module';
 import { AlbumModule } from './album/album.module';
+import { FotoModule } from './foto/foto.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { AlbumModule } from './album/album.module';
     AuthModule,
     AgendamentoModule,
     AlbumModule,
+    FotoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
