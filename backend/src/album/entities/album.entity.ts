@@ -24,6 +24,9 @@ export class Album {
   @Column()
   categoria: string;
 
+  @Column({ type: 'int', nullable: true })
+  avaliacao: number;
+
   @OneToOne(() => Agendamento)
   //Aqui crio uma coluna 'agendamentoId' na nossa tabela 'albuns'.
   @JoinColumn()
