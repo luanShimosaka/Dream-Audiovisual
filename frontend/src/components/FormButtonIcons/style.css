@@ -1,4 +1,4 @@
-.container-form-button {
+.container-form-button-icon {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -16,7 +16,7 @@
     border-radius: 6px;
 }
 
-.container-form-button h2 {
+.container-form-button-icon h2 {
     width: 100%;
     font-size: 25px;
     color: var(--black);

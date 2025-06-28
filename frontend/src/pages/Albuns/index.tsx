@@ -1,7 +1,32 @@
+'use client'
+
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 import { FormButtonIconsComponent, MenuOptionsComponent } from '../../components/components.ts'
 import './style.css'
 
+interface Album {
+    id: number
+    titulo: string
+}
+
 export default function Albuns() {
+
+    const [albuns, setAlbuns] = useState<Album[]>([])
+
+    useEffect(() => {
+        const loadData = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/album')
+                setAlbuns(response.data)
+            } catch (error) {
+                console.error('Erro ao carregar álbuns:', error)
+            }
+        }
+
+        loadData()
+    }, [])
+
     return (
         <>
             <>
@@ -27,18 +52,14 @@ export default function Albuns() {
                         </div>
                         <div className="bottom-right-clientlist">
                             <div className="row-albuns">
-                                <div className="album">
-                                    <img src="" alt="" />
-                                    <h2 style={{ fontSize: "24px", color: "white" }}>Álbum 1</h2>
-                                </div>
-                                <div className="album">
-                                    <img src="" alt="" />
-                                    <h2 style={{ fontSize: "24px", color: "white" }}>Álbum 1</h2>
-                                </div>
-                                <div className="album">
-                                    <img src="" alt="" />
-                                    <h2 style={{ fontSize: "24px", color: "white" }}>Álbum 1</h2>
-                                </div>
+                                {Array.isArray(albuns) && (
+                                    albuns.map((album) => (
+                                        <div className="album" key={album.id}>
+                                            <img src="" alt="" />
+                                            <h2 style={{ fontSize: "24px", color: "white" }}>{album.titulo}</h2>
+                                        </div>
+                                    ))
+                                )}
                             </div>
                         </div>
                     </div>

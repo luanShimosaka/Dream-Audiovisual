@@ -1,10 +1,9 @@
+import type { ModalType } from '../../types/types'
 import './style.css'
 
-export default function VisualizacaoAlbumUsuario() {
+export default function VisualizacaoAlbumUsuario({ onClose }: ModalType) {
     return (
         <>
-            <a href="#album-details-modal" className="button-style-open">Ver e Selecionar Fotos</a>
-
             <div id="album-details-modal" className="modal-overlay">
                 <form className="modal-content large" action="#">
                     <h2>Título do Álbum</h2>
@@ -80,9 +79,9 @@ export default function VisualizacaoAlbumUsuario() {
                     </div>
 
                     <div className="modal-buttons">
-                        <button type="submit" className="button-style">Confirmar Seleção</button>
-                        <a href="#" className="button-style">Avaliar Álbum</a>
-                        <a href="#" className="button-style">Fechar</a>
+                        <button type="submit" className="button-style" onClick={onClose}>Confirmar Seleção</button>
+                        <a href="#" className="button-style" onClick={onClose}>Avaliar Álbum</a>
+                        <a href="#" className="button-style" onClick={onClose}>Fechar</a>
                     </div>
                 </form>
             </div>

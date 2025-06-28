@@ -1,12 +1,4 @@
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f0f0f0;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-}
-
+/* Container base do modal */
 #upload-modal-container {
     position: fixed;
     top: 0;
@@ -18,17 +10,19 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    
+
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
 }
 
-#upload-modal-container:target {
+/* Quando ativo via React */
+#upload-modal-container.active {
     opacity: 1;
     visibility: visible;
 }
 
+/* Estilo do conteúdo do modal */
 .modal-content {
     background-color: #202020;
     color: #fff;
@@ -39,14 +33,18 @@ body {
     max-width: 450px;
     text-align: center;
 }
+
 .modal-content h2 {
     margin-top: 0;
     margin-bottom: 20px;
     font-weight: 500;
 }
 
-#file-upload { display: none; }
+#file-upload {
+    display: none;
+}
 
+/* Área de drop de arquivos */
 .drop-zone {
     display: flex;
     flex-direction: column;
@@ -61,10 +59,12 @@ body {
     transition: background-color 0.2s, border-color 0.2s;
     margin-bottom: 25px;
 }
+
 .drop-zone:hover {
     background-color: #3a3a3a;
     border-color: #888;
 }
+
 .drop-zone-icon-container {
     display: flex;
     justify-content: center;
@@ -76,7 +76,10 @@ body {
     margin-bottom: 15px;
     transition: border-color 0.2s;
 }
-.drop-zone:hover .drop-zone-icon-container { border-color: #fff; }
+
+.drop-zone:hover .drop-zone-icon-container {
+    border-color: #fff;
+}
 
 .plus-icon {
     font-size: 40px;
@@ -84,11 +87,19 @@ body {
     color: #a0a0a0;
     transition: color 0.2s;
 }
-.drop-zone:hover .plus-icon { color: #fff; }
 
-.drop-zone-text { font-size: 14px; color: #a0a0a0; }
+.drop-zone:hover .plus-icon {
+    color: #fff;
+}
 
-.button-style, .button-style-open {
+.drop-zone-text {
+    font-size: 14px;
+    color: #a0a0a0;
+}
+
+/* Botões do modal */
+.button-style,
+.button-style-open {
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
@@ -99,6 +110,11 @@ body {
     color: #000000;
     text-decoration: none;
     display: inline-block;
+}
+
+.button-red {
+    background-color: #AC0000;
+    color: #ffffff;
 }
 
 .modal-buttons {

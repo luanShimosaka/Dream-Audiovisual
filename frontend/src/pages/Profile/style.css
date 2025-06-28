@@ -81,6 +81,14 @@
 
     top: 40px;
     right: 40px;
+
+    border-radius: 6px;
+}
+
+.icon-edit-profile:hover {
+    background-color: rgba(44, 44, 44, 0.77);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .icon-edit-profile i {
@@ -138,6 +146,10 @@
     height: 100%;
 
     max-height: 99px;
+}
+
+.text-profile input {
+    background-color: var(--bg-dark-gray);
 }
 
 .input-type-profile {

@@ -1,10 +1,9 @@
+import type { ModalType } from '../../types/types'
 import './style.css'
 
-export default function VisualizarCliente() {
+export default function VisualizarCliente({ onClose }: ModalType) {
     return (
         <>
-            <a href="#client-view-modal" className="button-style-open">Modal Visualização Cliente</a>
-
             <div id="client-view-modal" className="modal-overlay">
                 <div className="modal-content">
                     <h2>Nome do Cliente</h2>
@@ -25,7 +24,7 @@ export default function VisualizarCliente() {
                     </div>
                     
                     <div className="modal-footer">
-                        <a href="#" className="button-style">Fechar</a>
+                        <a href="#" className="button-style" onClick={onClose}>Fechar</a>
                     </div>
                 </div>
             </div>

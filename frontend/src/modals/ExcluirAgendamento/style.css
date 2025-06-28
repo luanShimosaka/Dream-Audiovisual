@@ -1,75 +1,54 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 20px;
-}
-
-.button-style {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.2s;
-    background-color: #f1f1f1;
-    color: #000000;
-}
-
-.button-red {
-    color:#AC0000
-}
-.button-style:hover {
-    background-color: #dcdcdc;
-}
-
-#modal-container {
+.modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
 }
 
-#modal-container:target {
+.modal-overlay.show {
     opacity: 1;
     visibility: visible;
 }
 
-.modal {
+.modal-content {
     background-color: #202020;
     color: #dfe6e9;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     max-width: 500px;
-    width: 90%;
-    
-    transform: scale(0.9);
-    transition: transform 0.3s;
+    width: 100%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    text-align: left;
+
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
 }
 
-#modal-container:target .modal {
+.modal-overlay.show .modal-content {
     transform: scale(1);
 }
 
-
-.modal h2 {
+.modal-content h2 {
     margin-top: 0;
     margin-bottom: 15px;
     border-bottom: 1px solid #636e72;
     padding-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.modal-content p {
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 .modal-buttons {
@@ -77,4 +56,29 @@ body {
     display: flex;
     justify-content: flex-end;
     gap: 15px;
+}
+
+.button-style {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #ecf0f1;
+    color: #000;
+    transition: background-color 0.2s;
+}
+
+.button-style:hover {
+    background-color: #bdc3c7;
+}
+
+.button-red {
+    background-color: #c0392b;
+    color: white;
+}
+
+.button-red:hover {
+    background-color: #e74c3c;
 }

@@ -1,11 +1,3 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-}
 .button-style {
     padding: 12px 25px;
     border-radius: 8px;
@@ -15,9 +7,11 @@ body {
     font-weight: bold;
     display: inline-block;
 }
-.button-style:hover { background-color: #bdc3c7; }
+.button-style:hover {
+    background-color: #bdc3c7;
+}
 
-
+/* Modal container */
 #rating-modal-container {
     position: fixed;
     top: 0;
@@ -33,7 +27,7 @@ body {
     transition: opacity 0.3s, visibility 0.3s;
 }
 
-#rating-modal-container:target {
+#rating-modal-container.active {
     opacity: 1;
     visibility: visible;
 }
@@ -48,11 +42,20 @@ body {
     width: 90%;
     max-width: 400px;
 }
-.modal-content h2 { margin-top: 0; margin-bottom: 25px; }
-.modal-buttons { margin-top: 30px; display: flex; justify-content: center; gap: 15px; }
 
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
 
+.modal-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
 
+/* Star rating */
 .star-rating {
     display: flex;
     flex-direction: row-reverse;
@@ -60,14 +63,13 @@ body {
     gap: 10px;
 }
 
-
 .star-rating input[type="radio"] {
     display: none;
 }
 
 .star-rating label {
     font-size: 48px;
-    color: #7f8c8d; 
+    color: #7f8c8d;
     cursor: pointer;
     transition: color 0.2s;
 }
@@ -81,6 +83,7 @@ body {
 .star-rating:hover input[type="radio"] ~ label:hover ~ label {
     color: #f1c40f;
 }
+
 .star-rating input[type="radio"]:checked ~ label::before,
 .star-rating:hover input[type="radio"] ~ label:hover::before,
 .star-rating:hover input[type="radio"] ~ label:hover ~ label::before {

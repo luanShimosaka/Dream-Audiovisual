@@ -20,9 +20,9 @@ import { FotoModule } from './foto/foto.module';
       port: parseInt(process.env.DB_PORT || '3306', 10),
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
-      database: process.env.DB_DATABASE,
+      database: process.env.DB_NAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true, //Sincroniza o schema do banco com as entidades, apagar quando for pra produção.
+      synchronize: true,
     }),
     UserModule,
     AuthModule,
