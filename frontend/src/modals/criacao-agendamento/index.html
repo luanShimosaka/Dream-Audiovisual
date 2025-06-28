@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Criação de Agendamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#schedule-creation-modal" class="button-style-open">Modal Criação Agendamento</a>
+
+    <div id="schedule-creation-modal" class="modal-overlay">
+        <form class="modal-content" action="#">
+
+            <div class="form-fields">
+                <div class="field-group">
+                    <label for="titulo">Título do Agendamento:</label>
+                    <input type="text" id="titulo" name="titulo"></input>
+                </div>
+
+                <div class="field-group">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao" rows="3"></textarea>
+                </div>
+
+                <div class="field-group">
+                    <label for="data-agendamento">Data:</label>
+                    <input type="date" id="data-agendamento" name="data-agendamento">
+                </div>
+                
+                <div class="field-group">
+                    <label for="local">Local:</label>
+                    <input type="text" id="local" name="local">
+                </div>
+
+                <div class="field-group">
+                    <label for="cliente">Cliente (opcional):</label>
+                    <input type="text" id="cliente" name="cliente">
+                </div>
+            </div>
+            
+            <div class="modal-buttons">
+                <button type="submit" class="button-style">Adicionar</button>
+                <button type="submit" class="button-style">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
