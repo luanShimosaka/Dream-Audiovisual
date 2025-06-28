@@ -80,7 +80,7 @@ table {
 
     border-collapse: separate;
     border-spacing: 10px;
-    
+
     margin-top: 20px;
 }
 
@@ -106,6 +106,11 @@ td {
     border-radius: 6px;
 
     background-color: #444343;
+}
+
+i {
+    width: 100%;
+    height: 100%;
 }
 
 `
