@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Raleway:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,500;1,500&family=Italiana&family=Raleway:ital,wght@0,300;1,300&display=swap');
 
 #root {
     width: 100%;

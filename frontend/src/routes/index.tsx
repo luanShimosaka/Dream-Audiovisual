@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { AlbunsPage, ClientListPage, LandpagePage, LoginPage, ProfilePage, RegisterPage, SchedulesListPage } from "../pages/pages"
+import { AlbunsPage, ClientListPage, LandpagePage, LoginPage, MainClientPage, ProfilePage, RegisterPage, SchedulesListPage } from "../pages/pages"
 
 const PageRoutes = () => {
     return (
@@ -13,6 +13,7 @@ const PageRoutes = () => {
                     <Route path="/clientlist" element={<ClientListPage />}/>
                     <Route path="/schedules" element={<SchedulesListPage />}/>
                     <Route path="/albuns" element={<AlbunsPage />}/>
+                    <Route path="/mainclient" element={<MainClientPage />}/>
                 </Route>
             </Routes>
         </BrowserRouter>
