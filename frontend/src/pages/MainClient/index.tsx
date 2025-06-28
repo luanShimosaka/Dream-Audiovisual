@@ -40,7 +40,7 @@ export default function MainClient() {
                                     </div>
                                     <div className="schedule-main">
                                         <h2 style={{ fontSize: "16px", color: "#CCC" }}>10 AM</h2>
-                                        <h2 style={{ fontSize: "24px", color: "white" }}>Ensaio Alb1</h2>
+                                        <h2 style={{ fontSize: "24px", color: "white" }}>Ensaio Alb2</h2>
                                     </div>
                                 </div>
                             </div>
