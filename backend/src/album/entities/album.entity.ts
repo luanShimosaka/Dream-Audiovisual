@@ -26,6 +26,9 @@ export class Album {
   @Column()
   categoria: string;
 
+  @Column({ type: 'int', nullable: true })
+  avaliacao: number;
+
   @OneToOne(() => Agendamento)
 
   @JoinColumn()
