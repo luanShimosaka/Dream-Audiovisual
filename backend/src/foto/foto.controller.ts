@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Delete, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, ParseIntPipe, Patch } from '@nestjs/common';
 import { FotoService } from './foto.service';
 import { CreateFotoDto } from './dto/create-foto.dto';
 
@@ -19,5 +19,10 @@ export class FotoController {
   @Delete(':id')
   remove(@Param('id', ParseIntPipe) id: number) {
     return this.fotoService.remove(id);
+  }
+
+  @Patch(':id/selecionar')
+  toggleSelecao(@Param('id', ParseIntPipe) id: number) {
+    return this.fotoService.toggleSelecao(id);
   }
 }

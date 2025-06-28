@@ -4,7 +4,6 @@ import { Repository } from 'typeorm';
 import { AlbumService } from '../album/album.service';
 import { CreateFotoDto } from './dto/create-foto.dto';
 import { Foto } from './entities/foto.entity';
-
 @Injectable()
 export class FotoService {
   constructor(
@@ -45,5 +44,15 @@ export class FotoService {
     const foto = await this.findOne(id);
     await this.fotoRepository.remove(foto);
     return { message: `Foto com o ID #${id} deletada com sucesso.` };
+  }
+
+  async toggleSelecao(id: number): Promise<Foto> {
+    //Busca a foto para garantir que ela existe.
+    const foto = await this.findOne(id);
+
+    //Se era 'false', vira 'true'. Se era 'true', vira 'false'.
+    foto.selecionada = !foto.selecionada;
+
+    return this.fotoRepository.save(foto);
   }
 }
