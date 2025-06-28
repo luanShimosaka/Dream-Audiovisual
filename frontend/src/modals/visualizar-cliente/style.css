@@ -1,0 +1,106 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f0f0f0; 
+    margin: 40px; 
+    text-align: center;
+}
+
+.button-style-open {
+    padding: 10px 20px; 
+    border-radius: 6px;
+    font-size: 16px; 
+    font-weight: 500; 
+    background-color: #c7c7c7; 
+    color: #000000;
+    text-decoration: none; 
+    display: inline-block; 
+    transition: background-color 0.2s;
+}
+.button-style-open:hover { 
+    background-color: #555; 
+}
+
+.modal-overlay {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000;
+    opacity: 0; 
+    visibility: hidden; 
+    transition: all 0.3s ease-in-out;
+    padding: 20px;
+}
+.modal-overlay:target { 
+    opacity: 1; 
+    visibility: visible; 
+}
+
+.modal-content {
+    background-color: #202020; 
+    padding: 25px 30px; 
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    width: 100%; 
+    max-width: 450px; 
+    text-align: center; 
+    color: #fff;
+}
+.modal-content h2 { 
+    margin: 0 0 25px 0; 
+    font-weight: 500; 
+    font-size: 24px;
+}
+
+.client-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.info-group { 
+    text-align: left; 
+}
+.info-label {
+    display: block; 
+    margin-bottom: 5px; 
+    font-size: 14px; 
+    color: #aaa;
+}
+.info-data {
+    width: 100%;
+    padding: 10px;
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #eee;
+    font-size: 15px;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-footer {
+    text-align: center;
+}
+.button-style {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    font-size: 16px; 
+    font-weight: 500; 
+    background-color: #e0e0e0; 
+    color: #333;
+    text-decoration: none; 
+    display: inline-block; 
+    transition: background-color 0.2s;
+}
+.button-style:hover { 
+    background-color: #c7c7c7; 
+}

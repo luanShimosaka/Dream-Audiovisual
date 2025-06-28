@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.button-style {
+    padding: 12px 25px;
+    border-radius: 8px;
+    background-color: #ecf0f1;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.button-style:hover { background-color: #bdc3c7; }
+
+
+#rating-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+#rating-modal-container:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #202020;
+    color: #ecf0f1;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+.modal-content h2 { margin-top: 0; margin-bottom: 25px; }
+.modal-buttons { margin-top: 30px; display: flex; justify-content: center; gap: 15px; }
+
+
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 48px;
+    color: #7f8c8d; 
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star-rating label::before {
+    content: '☆';
+}
+
+.star-rating input[type="radio"]:checked ~ label,
+.star-rating:hover input[type="radio"] ~ label:hover,
+.star-rating:hover input[type="radio"] ~ label:hover ~ label {
+    color: #f1c40f;
+}
+.star-rating input[type="radio"]:checked ~ label::before,
+.star-rating:hover input[type="radio"] ~ label:hover::before,
+.star-rating:hover input[type="radio"] ~ label:hover ~ label::before {
+    content: '★';
+}
