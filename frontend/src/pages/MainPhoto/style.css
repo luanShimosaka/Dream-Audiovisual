@@ -40,6 +40,12 @@
     border-radius: 6px;
 }
 
+.tab-text-main:hover {
+    background-color: rgba(44, 44, 44, 0.77);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 .tab-top-main {
     height: 77%;
 

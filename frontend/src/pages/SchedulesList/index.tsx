@@ -6,7 +6,7 @@ export default function SchedulesList() {
         <>
             <>
                 <div className="container-clientlist">
-                    <MenuOptionsComponent />
+                    <MenuOptionsComponent isAdmin />
                     <div className="right-clientlist">
                         <div className="top-right-clientlist">
                             <div id="top-right-icon-clientlist">

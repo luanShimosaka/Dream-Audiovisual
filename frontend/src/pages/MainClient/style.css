@@ -51,6 +51,14 @@
     height: 186px;
 
     margin-top: 20px;
+
+    border-radius: 6px;
+}
+
+.album-main:hover {
+    background-color: rgba(44, 44, 44, 0.77);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .album-main img {
@@ -79,6 +87,14 @@
     height: 53px;
 
     margin-top: 20px;
+
+    border-radius: 6px;
+}
+
+.schedule-main:hover {
+    background-color: rgba(44, 44, 44, 0.77);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .schedule-main h2 {

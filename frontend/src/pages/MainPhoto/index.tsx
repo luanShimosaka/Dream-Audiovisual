@@ -1,12 +1,28 @@
+import { useNavigate } from 'react-router-dom'
 import { MenuOptionsComponent } from '../../components/components.ts'
 import './style.css'
 
 export default function MainPhoto() {
+
+    const navigate = useNavigate()
+
+    function handleAlbunsButton() {
+        navigate('/albuns')
+    }
+
+    function handleAgendamentosButton() {
+        navigate('/schedules')
+    }
+
+    function handleClientsButton() {
+        navigate('/clientlist')
+    }
+
     return (
         <>
             <>
                 <div className="container-clientlist">
-                    <MenuOptionsComponent />
+                    <MenuOptionsComponent isAdmin />
                     <div className="right-clientlist">
                         <div className="top-right-clientlist">
                             <div id="top-right-icon-clientlist">
@@ -21,21 +37,21 @@ export default function MainPhoto() {
                                         <h2 style={{ fontSize: "25px", color: "white" }}>Número de Clientes</h2>
                                         <h2 style={{ fontSize: "96px", color: "white", fontWeight: "700" }}>12</h2>
                                     </div>
-                                    <h2 style={{ fontSize: "25px", color: "white" }} className="tab-text-main">Menu Clientes</h2>
+                                    <h2 style={{ fontSize: "25px", color: "white" }} className="tab-text-main" onClick={handleClientsButton}>Menu Clientes</h2>
                                 </div>
                                 <div className="tab-main">
                                     <div className="tab-top-main">
                                         <h2 style={{ fontSize: "25px", color: "white" }}>Agendamentos Futuros</h2>
                                         <h2 style={{ fontSize: "96px", color: "white", fontWeight: "700" }}>3</h2>
                                     </div>
-                                    <h2 style={{ fontSize: "25px", color: "white" }} className="tab-text-main">Menu Álbuns</h2>
+                                    <h2 style={{ fontSize: "25px", color: "white" }} className="tab-text-main" onClick={handleAgendamentosButton}>Menu Agendamentos</h2>
                                 </div>
                                 <div className="tab-main">
                                     <div className="tab-top-main">
                                         <h2 style={{ fontSize: "25px", color: "white" }}>Álbuns Entregues</h2>
                                         <h2 style={{ fontSize: "96px", color: "white", fontWeight: "700" }}>18</h2>
                                     </div>
-                                    <h2 style={{ fontSize: "25px", color: "white" }} className="tab-text-main">Menu Agendamentos</h2>
+                                    <h2 style={{ fontSize: "25px", color: "white" }} className="tab-text-main" onClick={handleAlbunsButton}>Menu Álbuns</h2>
                                 </div>
                             </div>
                             <div className="bottom-row-main">
