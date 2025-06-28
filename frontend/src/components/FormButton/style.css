@@ -1,0 +1,24 @@
+.container-form-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 60%;
+    max-height: 52.1669921875px;
+    height: 100%;
+
+    background-color: var(--of-white);
+    border-radius: 6px;
+}
+
+.container-form-button h2 {
+    font-size: 25px;
+    color: var(--black);
+}
+
+.container-form-button:hover {
+    background-color: rgba(238, 238, 238, 0.7);
+    transition: 0.3s;
+    cursor: pointer;
+}

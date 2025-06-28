@@ -1,0 +1,202 @@
+.container-flow {
+    width: 100%;
+    height: 1797px;
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Parte de cima */
+
+.top-flow {
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#title-flow {
+    font-size: 80px;
+    text-align: center;
+    color: var(--white);
+}
+
+#description-flow {
+    font-size: 48px;
+    text-align: justify;
+    color: var(--white);
+}
+
+/* Parte de baixo */
+
+.bottom-flow {
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-frames-flow {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.right-frames-flow {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.frame-flow {
+    width: 100%;
+    max-width: 600px;
+    height: 200.77px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.left-frame-flow {
+    border-right: 3px solid var(--white);
+    margin-right: -1.5px;
+}
+
+.right-frame-flow {
+    border-left: 3px solid var(--white);
+    margin-left: -1.5px;
+    justify-content: flex-end;
+}
+
+.main-frame-flow {
+    width: 100%;
+    max-width: 400px;
+    height: 100px;
+
+    margin-top: 20px;
+    border-radius: 16px;
+
+    background-color: var(--glacier-50);
+
+    display: flex;
+    align-items: center;
+}
+
+.title-frame-flow {
+    font-size: 40px;
+}
+
+.title-left-flow {
+    width: 100%;
+    margin-left: 5%;
+}
+
+.title-right-flow {
+    width: 100%;
+    text-align: end;
+    margin-right: 5%;
+}
+
+/* Imagens */
+
+.images-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    width: 100%;
+    max-width: 210px;
+    height: 100%;
+    max-height: 210px;
+}
+
+.images-left-flow {
+    right: 60px;
+}
+
+.images-right-flow {
+    left: 60px;
+}
+
+/* Setas */
+
+.arrows-left-flow {
+    position: absolute;
+    right: -1px;
+    top: calc(200.77px / 2);
+}
+
+.arrows-right-flow {
+    position: absolute;
+    left: -1px;
+    top: calc(200.77px / 2);
+}
+
+.arrow-right-flow {
+    transform: rotate(0deg);
+}
+
+.arrow-left-flow {
+    transform: rotate(180deg);
+    position: absolute;
+}
+
+.arrow-flow {
+    position: relative;
+    width: 50px;
+    height: 2px;
+    background-color: white;
+    display: inline-block;
+}
+
+.arrow-flow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(-45deg);
+
+    width: 10px;
+    height: 10px;
+
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.arrow-flow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}

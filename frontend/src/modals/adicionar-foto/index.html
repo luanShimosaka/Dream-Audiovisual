@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Modal (Só HTML/CSS)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#upload-modal-container" class="button-style-open">Adcionar Foto</a>
+
+    <div id="upload-modal-container">
+        <form class="modal-content" action="#" method="post" enctype="multipart/form-data">
+            <h2>Título do Álbum</h2>
+
+            <label for="file-upload" class="drop-zone">
+                <div class="drop-zone-icon-container">
+                    <span class="plus-icon">+</span>
+                </div>
+                <span class="drop-zone-text">Arraste ou selecione as fotos</span>
+            </label>
+            <input type="file" id="file-upload" name="fotos[]" multiple>
+            
+            <div class="modal-buttons">
+                <a href="#" class="button-style">Cancelar</a>
+                <a href="#" class="button-style">Adicionar Foto</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -13,8 +13,17 @@ export class UserService {
   ) {}
 
   // CREATE
-  create(createUserDto: CreateUserDto): Promise<User> {
-    const user = this.userRepository.create(createUserDto);
+  async create(createUserDto: CreateUserDto): Promise<User> {
+    // Antes de salvar a senha Hasheamos ela
+    const saltOrRounds = 10;
+    const senhaHasheada = await bcrypt.hash(createUserDto.senha, saltOrRounds);
+
+    //Criação de um novo objeto substituindo a senha pura pela Hasheada
+    const user = this.userRepository.create({
+    ...createUserDto,
+    senha: senhaHasheada,
+  });
+
     return this.userRepository.save(user);
   }
 
@@ -53,7 +62,7 @@ export class UserService {
     return { data, total, page, limit };
   }
 
-  // READ (One by ID)
+  // READ (Por id)
   async findOne(id: number): Promise<User> {
     const user = await this.userRepository.findOne({ where: { id } });
     if (!user) {
@@ -88,5 +97,10 @@ export class UserService {
     const user = await this.findOne(id); // Reutiliza o findOne para checar se o usuário existe
     await this.userRepository.remove(user);
     return { message: `Usuário com o ID #${id} deletado com sucesso.` };
+  }
+
+  // Método para buscar o email na autenticação
+  async findByEmail(email: string): Promise<User | null> {
+    return this.userRepository.findOne({ where: { email } });
   }
 }
