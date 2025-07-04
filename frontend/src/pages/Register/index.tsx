@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import axios from 'axios'
 import { FormButtonComponent, FormComponent, MaintitleComponent } from '../../components/components'
 import './style.css'
+import { useApi } from '../../context/ApiContext'
 
 export default function Register() {
+
+    const { register } = useApi()
 
     const [formData, setFormData] = useState({
         nome: '',
@@ -18,14 +20,8 @@ export default function Register() {
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post('http://localhost:3000/user', {
-                nome: formData.nome,
-                email: formData.email,
-                senha: formData.senha,
-            })
-
-            console.log('Usuário cadastrado:', response.data)
-
+            const response = await register(formData.nome, formData.email, formData.senha)
+            console.log(response)
         } catch (err) {
             console.error('Erro ao cadastrar usuário:', err)
         }

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { FormButtonComponent, FormComponent, MaintitleComponent } from '../../components/components';
 import './style.css';
-import axios from 'axios';
+import { useApi } from '../../context/ApiContext'
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
 
+    const { login } = useApi()
     const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
@@ -20,23 +21,7 @@ export default function Login() {
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post('http://localhost:3000/auth/login', 
-                {
-                    "email": formData.identificador,
-                    "senha": formData.senha,
-                }
-            )
-
-            console.log('Login realizado com sucesso:', response.data)
-
-            const userSearch = await axios.get(`http://localhost:3000/user/${response.data.user.id}`)
-
-            localStorage.setItem('user_id', String(userSearch.data.id))
-            localStorage.setItem('nome', userSearch.data.nome)
-            localStorage.setItem('email', userSearch.data.email)
-            localStorage.setItem('telefone', userSearch.data.telefone ?? '-')
-            localStorage.setItem('dataNasc', userSearch.data.datanascimento ?? '-')
-
+            await login(formData.identificador, formData.senha)
             navigate('/mainclient')
         } catch (err) {
             console.error('Erro ao fazer login:', err)

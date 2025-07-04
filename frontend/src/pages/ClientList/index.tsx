@@ -1,25 +1,21 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import { MenuOptionsComponent } from '../../components/components.ts'
 import './style.css'
-
-interface User {
-    id: number
-    nome: string
-    email: string
-    telefone: string | null
-}
+import { useApi } from '../../context/ApiContext.tsx'
+import type { User } from '../../interfaces/interfaces.ts'
 
 export default function ClientList() {
+    
+    const { api } = useApi()
     const [users, setUsers] = useState<User[]>([])
 
     useEffect(() => {
         const loadData = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/user')
-                setUsers(response.data.data)
+                const response = await api?.getClientes()
+                setUsers(response ?? [])
             } catch (error) {
                 console.error('Erro ao carregar usuários:', error)
             }
