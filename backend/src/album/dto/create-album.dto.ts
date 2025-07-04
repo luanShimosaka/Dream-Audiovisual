@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { IsNotEmpty, IsString, IsOptional, IsNumber, Max, Min } from 'class-validator';
+=======
+import { IsNotEmpty, IsString, IsOptional, IsNumber, Min, Max } from 'class-validator';
+>>>>>>> aabd535a5fa64b2c39b7c5248673ca8031ea8cfa
 
 export class CreateAlbumDto {
   @IsString()
