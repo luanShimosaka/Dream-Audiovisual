@@ -1,8 +1,10 @@
 import { Controller, Get, Post, Body, Param, Delete, ParseIntPipe, Patch } from '@nestjs/common';
 import { FotoService } from './foto.service';
 import { CreateFotoDto } from './dto/create-foto.dto';
-
+import { UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 @Controller('foto')
+@UseGuards(AuthGuard('jwt'))
 export class FotoController {
   constructor(private readonly fotoService: FotoService) {}
 
