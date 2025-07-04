@@ -1,0 +1,4 @@
+Caso de Teste,Funcionalidade,Cenário,Pré-Condições,Dados de Entrada,Resultado Esperado,Status,Local,Observações
+CT-001,Consultar Álbum,Busca por nome,Usuário logado no sistema/usuário com acesso ao álbum,,Sistema retorna dados do álbum contendo '',Testado OK,Tela de Álbum Fotógrafo,Fluxo Principal
+CT-002,Consultar Cliente,Erro na Busca,Usuário logado no sistema,,"Sistema não encontra dados e retorna mensagem de erro específica: ""Dadis do Cliente não encontrado""",Testado NOK,Tela de Cliente Fotógrafo,Fluxo Principal
+CT-003,Consultar Agendamento,Busca por ID,Usuário logado no sistema/usuário com acesso ao agendamento,,Sistema retorna dados do agendamento contendo '',Testado Não Testado,Tela de Agendamento Cliente,Fluxo Principal
