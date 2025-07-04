@@ -4,18 +4,12 @@ import { useEffect, useState } from 'react'
 import { FormButtonComponent, MenuOptionsComponent } from '../../components/components'
 import './style.css'
 import { ExcluirContaModal } from '../../modals/modals'
-import axios from 'axios'
-
-interface User {
-    id: number
-    nome: string
-    email: string
-    telefone: string
-    dataNasc: string
-}
+import type { User } from '../../interfaces/interfaces'
+import { useApi } from '../../context/ApiContext'
 
 export default function Profile() {
 
+    const { api } = useApi()
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isEditing, setEditing] = useState(false)
     const [user, setUser] = useState<User>()
@@ -24,15 +18,13 @@ export default function Profile() {
         const loadData = async () => {
             try {
 
-                const userData: User = {
-                    id: localStorage.getItem('user_id') ? parseInt(localStorage.getItem('user_id') ?? '1') : 1,
-                    nome: localStorage.getItem('nome') ?? 'Erro',
-                    email: localStorage.getItem('email') ?? 'Erro',
-                    telefone: localStorage.getItem('telefone') ?? 'Erro',
-                    dataNasc: localStorage.getItem('dataNasc') ?? 'Erro'
-                }
+                const userData = await api?.getMe()
 
-                setUser(userData)
+                if (userData) {
+                    setUser(userData)
+                } else {
+                    console.error('Erro: usuário não encontrado.')
+                }
 
             } catch (error) {
                 console.error('Erro ao carregar usuário:', error)
@@ -52,19 +44,17 @@ export default function Profile() {
             try {
                 if (!user) return
 
-                const response = await axios.patch(`http://localhost:3000/user/${user.id}`, {
-                    nome: user.nome,
-                    email: user.email,
-                    telefone: user.telefone,
-                    dataNasc: user.dataNasc
-                })
+                const response = await api?.editUser(
+                    user.nome ?? '',
+                    user.email ?? '',
+                    user.telefone ?? '',
+                    user.dataNasc ?? '',
+                    user.id
+                )
 
-                console.log('Usuário atualizado:', response.data)
-
-                localStorage.setItem('nome', user.nome)
-                localStorage.setItem('email', user.email)
-                localStorage.setItem('telefone', user.telefone)
-                localStorage.setItem('dataNasc', user.dataNasc)
+                if (response) {
+                    console.log('Usuário atualizado com sucesso!')
+                } else console.error('Erro ao editar usuário')
 
                 setEditing(false)
             } catch (error) {

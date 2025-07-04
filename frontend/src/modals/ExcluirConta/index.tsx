@@ -1,22 +1,25 @@
-import axios from 'axios';
 import type { ModalType } from '../../types/types';
 import './style.css'
 import { useNavigate } from 'react-router-dom';
+import { useApi } from '../../context/ApiContext';
 
 export default function ExcluirConta({ isOpen, onClose }: ModalType) {
 
+    const { api } = useApi()
     const navigate = useNavigate()
 
     async function deleteUser() {
         try {
 
-            const userId = localStorage.getItem('user_id')
+            const user = await api?.getMe()
 
-            if (!userId) throw new Error
+            if (!user) throw new Error
 
-            const response = await axios.delete(`http://localhost:3000/user/${userId}`)
+            const response = await api?.deleteUser(user.id)
 
-            console.log(response)
+            if (response) {
+                console.log('Usuário deletado com sucesso!')
+            } else console.error('Erro ao deletar usuário')
 
             navigate('/login')
 

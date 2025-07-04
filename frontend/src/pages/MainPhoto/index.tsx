@@ -3,17 +3,15 @@ import { MenuOptionsComponent } from '../../components/components.ts'
 import './style.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
-interface Album {
-    id: number
-    titulo: string
-}
+import { useApi } from '../../context/ApiContext.tsx'
+import type { Album, Schedule } from '../../interfaces/interfaces.ts'
 
 export default function MainPhoto() {
 
+    const { api } = useApi()
     const [albuns, setAlbuns] = useState<Album[]>([])
     const [clientsNumber, setClientNumbers] = useState(0)
-    const [schedulesNumber, setSchedulesNumber] = useState(0)
+    const [schedules, setSchedules] = useState<Schedule[]>([])
 
     const navigate = useNavigate()
 
@@ -41,18 +39,17 @@ export default function MainPhoto() {
 
     const loadAlbuns = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/album')
-            setAlbuns(response.data)
+            const response = await api?.getAlbuns()
+            setAlbuns(response ?? [])
         } catch (error) {
             console.error('Erro ao carregar álbuns:', error)
         }
     }
 
-    const loadSchedulesNumber = async () => {
+    const loadSchedules = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/agendamento')
-            const data = response.data
-            setSchedulesNumber(Array.isArray(data) ? data.length : 0)
+            const response = await api?.getAgendamentos()
+            setSchedules(response ?? [])
         } catch (error) {
             console.error('Erro ao carregar agendamentos:', error)
         }
@@ -61,7 +58,7 @@ export default function MainPhoto() {
     useEffect(() => {
         loadClientsNumber()
         loadAlbuns()
-        loadSchedulesNumber()
+        loadSchedules()
     }, [])
 
     return (
@@ -88,7 +85,7 @@ export default function MainPhoto() {
                                 <div className="tab-main">
                                     <div className="tab-top-main">
                                         <h2 style={{ fontSize: "25px", color: "white" }}>Agendamentos Futuros</h2>
-                                        <h2 style={{ fontSize: "96px", color: "white", fontWeight: "700" }}>{schedulesNumber}</h2>
+                                        <h2 style={{ fontSize: "96px", color: "white", fontWeight: "700" }}>{Array.isArray(schedules) && schedules.length}</h2>
                                     </div>
                                     <h2 style={{ fontSize: "25px", color: "white" }} className="tab-text-main" onClick={handleAgendamentosButton}>Menu Agendamentos</h2>
                                 </div>
@@ -116,14 +113,14 @@ export default function MainPhoto() {
                                 <div className="calendar-principal principal-photo">
                                     <div className="calendar-main"></div>
                                     <div className="list-main schedule-list-main">
-                                        <div className="schedule-main">
-                                            <h2 style={{ fontSize: "16px", color: "#CCC" }}>8:30 AM</h2>
-                                            <h2 style={{ fontSize: "24px", color: "white" }}>Ensaio Alb1</h2>
-                                        </div>
-                                        <div className="schedule-main">
-                                            <h2 style={{ fontSize: "16px", color: "#CCC" }}>10 AM</h2>
-                                            <h2 style={{ fontSize: "24px", color: "white" }}>Ensaio Alb2</h2>
-                                        </div>
+                                        {Array.isArray(schedules) && (
+                                            schedules.map((schedule) => (
+                                                <div className="schedule-main" key={schedule.id}>
+                                                    <h2 style={{ fontSize: "16px", color: "#CCC" }}>{schedule.data}</h2>
+                                                    <h2 style={{ fontSize: "24px", color: "white" }}>{schedule.descricao}</h2>
+                                                </div>
+                                            ))
+                                        )}
                                     </div>
                                 </div>
                             </div>

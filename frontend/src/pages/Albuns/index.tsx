@@ -1,9 +1,10 @@
 'use client'
 
-import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { FormButtonIconsComponent, MenuOptionsComponent } from '../../components/components.ts'
 import './style.css'
+import { useApi } from '../../context/ApiContext.tsx'
+import { CriacaoAlbumModal } from '../../modals/modals.ts'
 
 interface Album {
     id: number
@@ -12,13 +13,16 @@ interface Album {
 
 export default function Albuns() {
 
+    const { api } = useApi()
     const [albuns, setAlbuns] = useState<Album[]>([])
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     useEffect(() => {
         const loadData = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/album')
-                setAlbuns(response.data)
+                const response = await api?.getAlbuns()
+                console.log(response)
+                setAlbuns(response ?? [])
             } catch (error) {
                 console.error('Erro ao carregar álbuns:', error)
             }
@@ -40,7 +44,7 @@ export default function Albuns() {
                             <h2>Álbuns</h2>
                         </div>
                         <div className="buttons-schedule">
-                            <div className="button-schedule">
+                            <div className="button-schedule" onClick={() => setIsModalOpen(true)}>
                                 <FormButtonIconsComponent text='Adicionar Álbum' />
                             </div>
                             <div className="button-schedule">
@@ -64,6 +68,10 @@ export default function Albuns() {
                         </div>
                     </div>
                 </div>
+
+                {isModalOpen && (
+                    <CriacaoAlbumModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                )}
             </>
         </>
     )

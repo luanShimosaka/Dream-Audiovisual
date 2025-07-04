@@ -4,25 +4,20 @@ import { useEffect, useState } from 'react'
 import { FormButtonIconsComponent, MenuOptionsComponent } from '../../components/components.ts'
 import './style.css'
 import { CriacaoAlbumModal } from '../../modals/modals.ts'
-import axios from 'axios'
-
-interface Schedule {
-    id: number
-    descricao: string
-    local: string
-    data: string
-}
+import type { Schedule } from '../../interfaces/interfaces.ts'
+import { useApi } from '../../context/ApiContext.tsx'
 
 export default function SchedulesList() {
 
+    const { api } = useApi()
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [schedules, setSchedules] = useState<Schedule[]>([])
 
     useEffect(() => {
         const loadData = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/agendamento')
-                setSchedules(response.data)
+                const response = await api?.getAgendamentos()
+                setSchedules(response ?? [])
             } catch (error) {
                 console.error('Erro ao carregar agendamentos:', error)
             }
