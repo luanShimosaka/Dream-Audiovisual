@@ -5,7 +5,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 @Controller('user') // Define o prefixo da rota para /user
-@UseGuards(AuthGuard('jwt'))
+
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
@@ -15,6 +15,7 @@ export class UserController {
   }
 
   @Get()
+  @UseGuards(AuthGuard('jwt'))
   findAll(
     @Query('nome') nome?: string,
     @Query('email') email?: string,
@@ -25,16 +26,19 @@ export class UserController {
   }
 
   @Get(':id')
+  @UseGuards(AuthGuard('jwt'))
   findOne(@Param('id', ParseIntPipe) id: number) {
     return this.userService.findOne(id);
   }
 
   @Patch(':id')
+  @UseGuards(AuthGuard('jwt'))
   update(@Param('id', ParseIntPipe) id: number, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(id, updateUserDto);
   }
 
   @Delete(':id')
+  @UseGuards(AuthGuard('jwt'))
   remove(@Param('id', ParseIntPipe) id: number) {
     return this.userService.remove(id);
   }

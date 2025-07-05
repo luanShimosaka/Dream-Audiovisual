@@ -5,6 +5,7 @@ import { AgendamentoService } from '../agendamento/agendamento.service';
 import { CreateAlbumDto } from './dto/create-album.dto';
 import { UpdateAlbumDto } from './dto/update-album.dto';
 import { Album } from './entities/album.entity';
+import { UserService } from '../user/user.service';
 
 @Injectable()
 export class AlbumService {
@@ -13,16 +14,23 @@ export class AlbumService {
     @InjectRepository(Album)
     private readonly albumRepository: Repository<Album>,
     private readonly agendamentoService: AgendamentoService,
+    private readonly userService: UserService,
   ) {}
 
   async create(createAlbumDto: CreateAlbumDto): Promise<Album> {
-    const { agendamentoId, ...restOfDto } = createAlbumDto;
+    const { agendamentoId, userId, ...restOfDto } = createAlbumDto;
 
     const agendamento = await this.agendamentoService.findOne(agendamentoId);
+
+    const user = await this.userService.findOne(userId);
+    if (!user) {
+        throw new NotFoundException(`Usuário com o ID #${userId} não encontrado.`);
+    }
 
     const novoAlbum = this.albumRepository.create({
       ...restOfDto,
       agendamento: agendamento,
+      user: user,
     });
 
     return this.albumRepository.save(novoAlbum);
@@ -31,14 +39,14 @@ export class AlbumService {
   findAll(): Promise<Album[]> {
     //Para que inclusão do objeto de agendamento aninhado é utilizado relations
     return this.albumRepository.find({
-      relations: ['agendamento'],
+      relations: ['agendamento', 'user'],
     });
   }
 
   async findOne(id: number): Promise<Album> {
     const album = await this.albumRepository.findOne({
       where: { id },
-      relations: ['agendamento'],
+      relations: ['agendamento', 'user'],
     });
 
     if (!album) {
@@ -48,7 +56,7 @@ export class AlbumService {
   }
 
   async update(id: number, updateAlbumDto: UpdateAlbumDto): Promise<Album> {
-    const { agendamentoId, ...restOfDto } = updateAlbumDto;
+    const { agendamentoId, userId, ...restOfDto } = updateAlbumDto;
 
     const album = await this.albumRepository.preload({
       id: id,
@@ -62,6 +70,11 @@ export class AlbumService {
     if (agendamentoId) {
       const agendamento = await this.agendamentoService.findOne(agendamentoId);
       album.agendamento = agendamento;
+    }
+    
+    if (userId) {
+        const user = await this.userService.findOne(userId);
+        album.user = user;
     }
 
     return this.albumRepository.save(album);
