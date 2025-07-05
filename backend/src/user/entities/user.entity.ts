@@ -1,5 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
-
+import { Album } from '../../album/entities/album.entity';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 @Entity({ name: 'users' }) //Define o nome da tabela como 'users'
 export class User {
   @PrimaryGeneratedColumn()
@@ -19,4 +19,7 @@ export class User {
 
   @Column({ type: 'date', nullable: true }) //nullable: true torna o campo opcional
   datanascimento: Date;
+  
+  @OneToMany(() => Album, (album) => album.user)
+  albuns: Album[];
 }
