@@ -21,8 +21,10 @@ export default function Register() {
     const handleSubmit = async () => {
         try {
             const response = await register(formData.nome, formData.email, formData.senha)
+            alert('Usuário cadastrado com sucesso!')
             console.log(response)
         } catch (err) {
+            alert('Houve um erro ao cadastrar o usuário')
             console.error('Erro ao cadastrar usuário:', err)
         }
     }

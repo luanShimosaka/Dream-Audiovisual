@@ -53,14 +53,20 @@ export default function Profile() {
                 )
 
                 if (response) {
+                    alert('Usuário atualizado com sucesso!')
                     console.log('Usuário atualizado com sucesso!')
-                } else console.error('Erro ao editar usuário')
+                } else {
+                    alert('Erro ao editar usuário')
+                    console.error('Erro ao editar usuário')
+                }
 
                 setEditing(false)
             } catch (error) {
+                alert('Erro ao editar usuário')
                 console.error('Erro ao editar usuário:', error)
             }
         } else {
+            alert('Você agora pode editar as suas informações!')
             setEditing(true)
         }
     }
@@ -68,7 +74,7 @@ export default function Profile() {
     return (
         <>
             <div className="container-profile">
-                <MenuOptionsComponent />
+                <MenuOptionsComponent isAdmin />
                 <div className="right-profile">
                     <div className="top-right-profile">
                         <div id="top-right-icon-profile">

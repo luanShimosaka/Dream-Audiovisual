@@ -32,7 +32,7 @@ export default function CriacaoAlbum({ onClose }: ModalType) {
         setAlbum(prev => ({ ...prev, [name]: value }))
     }
 
-    async function createAlbum(e: FormEvent) {
+    async function createAlbum(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
         try {
             if (!api) return
@@ -45,11 +45,16 @@ export default function CriacaoAlbum({ onClose }: ModalType) {
             const success = await api.createAlbum(payload)
 
             if (success) {
+                navigate('/mainclient')
                 navigate('/albuns')
+                onClose()
+                alert('Álbum criado com sucesso!')
             } else {
+                alert('Erro ao criar álbum: resposta não foi bem-sucedida.')
                 console.error("Erro ao criar álbum: resposta não foi bem-sucedida.")
             }
         } catch (error) {
+            alert('Erro ao criar álbum')
             console.error('Erro ao criar álbum:', error)
         }
     }
@@ -146,7 +151,7 @@ export default function CriacaoAlbum({ onClose }: ModalType) {
                     <button type="button" className="button-style" onClick={onClose}>
                         Cancelar
                     </button>
-                    <button type="submit" className="button-style" onClick={onClose}>
+                    <button type="submit" className="button-style">
                         Criar Álbum
                     </button>
                 </div>

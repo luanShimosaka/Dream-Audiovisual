@@ -15,7 +15,7 @@ export class AlbumService {
     private readonly albumRepository: Repository<Album>,
     private readonly agendamentoService: AgendamentoService,
     private readonly userService: UserService,
-  ) {}
+  ) { }
 
   async create(createAlbumDto: CreateAlbumDto): Promise<Album> {
     const { agendamentoId, userId, ...restOfDto } = createAlbumDto;
@@ -24,7 +24,7 @@ export class AlbumService {
 
     const user = await this.userService.findOne(userId);
     if (!user) {
-        throw new NotFoundException(`Usuário com o ID #${userId} não encontrado.`);
+      throw new NotFoundException(`Usuário com o ID #${userId} não encontrado.`);
     }
 
     const novoAlbum = this.albumRepository.create({
@@ -71,10 +71,10 @@ export class AlbumService {
       const agendamento = await this.agendamentoService.findOne(agendamentoId);
       album.agendamento = agendamento;
     }
-    
+
     if (userId) {
-        const user = await this.userService.findOne(userId);
-        album.user = user;
+      const user = await this.userService.findOne(userId);
+      album.user = user;
     }
 
     return this.albumRepository.save(album);

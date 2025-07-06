@@ -21,6 +21,6 @@ export class Agendamento {
   @Column()
   local: string;
 
-  @Column()
+  @Column({ nullable: true })
   cliente: string;
 }

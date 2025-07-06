@@ -18,7 +18,7 @@ export default function Start() {
                         <h1 id="title-start">Dream Audiovisual</h1>
                         <h3 id="subtitle-start">Uma nova visão sobre a sua realidade</h3>
                     </div>
-                    <button className="budget-button budget-button-start" onClick={handleBudgetButton} >Peça um Orçamento</button>
+                    <button className="budget-button budget-button-start" onClick={handleBudgetButton} >Fazer Login</button>
                 </div>
 
                 <div className="bottom-start">

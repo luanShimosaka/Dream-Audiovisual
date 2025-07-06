@@ -19,9 +19,12 @@ export default function ExcluirConta({ isOpen, onClose }: ModalType) {
 
             if (response) {
                 console.log('Usuário deletado com sucesso!')
-            } else console.error('Erro ao deletar usuário')
-
-            navigate('/login')
+                navigate('/login')
+                alert('Usuário deletado com sucesso!')
+            } else {
+                alert('Erro ao deletar usuário')
+                console.error('Erro ao deletar usuário')
+            }
 
         } catch (error) {
             console.error('Erro ao deletar usuário: ', error)

@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsDateString, Matches } from 'class-validator';
+import { IsNotEmpty, IsString, IsDateString, Matches, IsOptional } from 'class-validator';
 
 export class CreateAgendamentoDto {
   @IsNotEmpty({ message: 'O título não pode ser vazio.' })
@@ -20,6 +20,7 @@ export class CreateAgendamentoDto {
   @IsNotEmpty({ message: 'O local precisa ser específicado.' })
   local: string;
 
+  @IsOptional()
   @IsString({ message: 'O nome do cliente deve ser composto somente de letras.' })
-  cliente: string;
+  cliente?: string;
 }

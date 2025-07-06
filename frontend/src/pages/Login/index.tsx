@@ -24,6 +24,7 @@ export default function Login() {
             await login(formData.identificador, formData.senha)
             navigate('/mainclient')
         } catch (err) {
+            alert('Dados do login estão errados, tente novamente')
             console.error('Erro ao fazer login:', err)
         }
     }
